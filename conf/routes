@@ -1,0 +1,16 @@
+GET         /api-docs                     controllers.ApiHelpController.getResources
+GET         /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+
+GET         /                             controllers.HomeController.index
+GET         /health                       controllers.HomeController.health
+POST        /telegram                     controllers.TelegramController.telegram
+POST        /twitter                      controllers.TwitterController.twitter
+POST        /track/start                  controllers.TrackController.start
+POST        /track/end                    controllers.TrackController.end
+POST        /track/check                  controllers.TrackController.check(latitude: Double, longitude: Double)
+POST        /user                         controllers.UserController.register
+POST        /user/login                   controllers.UserController.login
+GET         /follows                      controllers.FollowController.getFollowers
+POST        /follows/accept               controllers.FollowController.acceptFollower(followId: Long)
+POST        /follows/reject               controllers.FollowController.rejectFollower(followId: Long)

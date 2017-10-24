@@ -1,0 +1,6 @@
+social.user_location={0} is at
+social.user_not_found=No user found with given name
+social.follow=You now follow {0}
+social.already_following=You are already following {0}
+social.unfollow=You no longer follow {0}
+social.not_following=You were not following {0}
