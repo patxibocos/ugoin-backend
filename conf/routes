@@ -1,7 +1,3 @@
-GET         /api-docs                     controllers.ApiHelpController.getResources
-GET         /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
-GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
-
 GET         /                             controllers.HomeController.index
 GET         /health                       controllers.HomeController.health
 POST        /telegram                     controllers.TelegramController.telegram

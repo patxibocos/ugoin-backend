@@ -101,5 +101,6 @@ project/plugins/project/
 hs_err_pid*
 
 # End of https://www.gitignore.io/api/playframework,intellij,scala,java,sbt
+conf/prod.conf
 conf/reference.conf
 target/docker/stage/

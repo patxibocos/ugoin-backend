@@ -6,7 +6,6 @@ import dto.in.LoginUserRequestDTO.loginUserRequestReads
 import dto.in.RegisterUserRequestDTO.registerUserRequestReads
 import dto.in.{LoginUserRequest, RegisterUserRequest}
 import dto.out.LoginResponseDTO.{LoginResponse, loginResponseWrites}
-import io.swagger.annotations._
 import models.db.UserDbRepository
 import models.entities.User
 import play.api.libs.Codecs
@@ -17,7 +16,6 @@ import services.UserService
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
-@Api(value = "user")
 @Singleton
 class UserController @Inject()(userDbRepository: UserDbRepository, userService: UserService, cc: ControllerComponents) extends AbstractController(cc) {
 
@@ -32,15 +30,6 @@ class UserController @Inject()(userDbRepository: UserDbRepository, userService: 
     }
   }
 
-  @ApiOperation(value = "Registers a user", consumes = "application/json")
-  @ApiImplicitParams(Array(
-    new ApiImplicitParam(name = "User data", value = "User data", paramType = "body", dataType = "dto.in.RegisterUserRequest")
-  ))
-  @ApiResponses(Array(
-    new ApiResponse(code = 200, message = "Success", response = classOf[LoginResponse]),
-    new ApiResponse(code = 400, message = "Missing data"),
-    new ApiResponse(code = 409, message = "Username already exists")
-  ))
   def register = Action.async(parse.json) { implicit request: Request[JsValue] =>
     request.body.validate[RegisterUserRequest] match {
       case s: JsSuccess[RegisterUserRequest] =>
