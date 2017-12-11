@@ -13,9 +13,9 @@ libraryDependencies ++= Seq(
   ws,
   guice,
   "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
-  "org.mockito" % "mockito-core" % "2.10.0" % Test,
-  "com.typesafe.play" %% "play-slick" % "3.0.2",
-  "mysql" % "mysql-connector-java" % "5.1.44",
+  "org.mockito" % "mockito-core" % "2.13.0" % Test,
+  "com.typesafe.play" %% "play-slick" % "3.0.3",
+  "mysql" % "mysql-connector-java" % "5.1.45",
   "com.h2database" % "h2" % "1.4.196" % Test
 )
 
